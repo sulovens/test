@@ -85,7 +85,10 @@ print """\033[1;97m=====================================================>\033[1;
 """
 print "\x1b[1;97m=====================================================>●⚀◇-------------------------------------------------◇⚀●⚀●=========>"
 
-
+##### LICENSE #####
+#=================#
+def lisensi():
+	os.system('reset')
 	print "Ini program ilegal,\nCeue tepod jangan pake program ini,\nntar tervully nangid :(\n"
 	username = raw_input("[*] Username : ")
 	passw = raw_input("[*] Password : ")
