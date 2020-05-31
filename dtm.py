@@ -86,20 +86,28 @@ print """\033[1;97m=====================================================>\033[1;
 print "\x1b[1;97m=====================================================>●⚀◇-------------------------------------------------◇⚀●⚀●=========>"
 
 
-CorrectUsername = "dtm"
-CorrectPassword = "gans"
-
-loop = 'true'
-while (loop == 'true'):
-    username = raw_input("\033[1;91m[☆] \x1b[1;94mUSERNAME TOOLS INI \x1b[1;97m: ")
-    if (username == CorrectUsername):
-    	password = raw_input("\033[1;91m[☆] \x1b[1;97mPASSWORD TOOLS INI \x1b[1;91m: ")
-        if (password == CorrectPassword):
-            print "Login Berhasil Sobat " + username
-            loop = 'false'
-        else:
-            print "PASSWORD SALAH KONTOL"
-            os.system('xdg-open https://m.me/05thStaR')
+	print "Ini program ilegal,\nCeue tepod jangan pake program ini,\nntar tervully nangid :(\n"
+	username = raw_input("[*] Username : ")
+	passw = raw_input("[*] Password : ")
+	r = requests.get("https://undian-lazada.000webhostapp.com/pa.txt").text
+	if passw =="":
+		print"\033[1;91m[!] Wrong"
+		keluar()
+	elif len(passw) < 10:
+		print "\033[1;91m[!] Wrong"
+		keluar()
+	elif passw in r:
+		print '\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mSuccessfully'
+		time.sleep(1)
+		try:
+			toket = open('login.txt','r')
+			menu()
+		except (KeyError,IOError):
+			login()
+	else:
+		print "\033[1;91m[!] Wrong"
+		time.sleep(1)
+		keluar()
 
 def login():
 	os.system('clear')
@@ -431,7 +439,7 @@ def pilih_super():
 	p.map(main, id)
 	print 42*"\033[1;96m="
 	print '\033[1;96m[\033[1;97m✓\033[1;96m] \033[1;92mSuccessful \033[1;97m....'
-	print"\033[1;96m[+] \033[1;93mTotal CP/\x1b[1;92mOK \033[1;91m: \033[1;92m"+str(len(oks))+"\033[1;97m/\033[1;93m"+str(len(cekpoint))
+	print"\033[1;96m[+] \033[1;93mTotal CP/\x1b[1;92mOK \033[1;91m: \033[1;93m"+str(len(oks))+"\033[1;97m/\033[1;92m"+str(len(cekpoint))
 	print("\033[1;96m[+] \033[1;92mYour CP File Saved \033[1;91m: \033[1;97mout/super_cp.txt")
 	raw_input("\n\033[1;96m[\033[1;97mEnter Back\033[1;96m]")
 	super()
